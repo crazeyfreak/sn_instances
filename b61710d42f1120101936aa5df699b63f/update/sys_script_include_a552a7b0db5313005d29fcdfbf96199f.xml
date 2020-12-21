@@ -18,6 +18,7 @@ ND_alertUser.prototype = Object.extendsObject(AbstractAjaxProcessor,{
 			var responseBody = response.getBody();
 			var httpStatus = response.getStatusCode();
 			gs.info(responseBody);
+//change in git
 		}
 		catch(ex) {
 			var message = ex.getMessage();
