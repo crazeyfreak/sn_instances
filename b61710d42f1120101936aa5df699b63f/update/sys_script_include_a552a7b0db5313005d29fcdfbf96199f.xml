@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.ND_alertUser</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>ND_alertUser</name>
+        <script><![CDATA[var ND_alertUser = Class.create();
+ND_alertUser.prototype = Object.extendsObject(AbstractAjaxProcessor,{
+    alertUser: function() {
+		gs.addInfoMessage("This is high prioriy Incident");
+	 	try { 
+			var r = new sn_ws.RESTMessageV2('ND_TestRESTAPI', 'ND_GET');
+			r.setStringParameter("baseUrl", 'https://dev19028.service-now.com');
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			gs.info(responseBody);
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+		}
+    },
+    type: 'ND_alertUser'
+			
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-12 12:13:36</sys_created_on>
+        <sys_id>a552a7b0db5313005d29fcdfbf96199f</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>ND_alertUser</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NARESH GIT TEST">b61710d42f1120101936aa5df699b63f</sys_scope>
+        <sys_update_name>sys_script_include_a552a7b0db5313005d29fcdfbf96199f</sys_update_name>
+        <sys_updated_by>naresh</sys_updated_by>
+        <sys_updated_on>2020-12-21 03:01:22</sys_updated_on>
+    </sys_script_include>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="NARESH GIT TEST">b61710d42f1120101936aa5df699b63f</claim_owner_scope>
+        <claim_timestamp>176833e8a7b0000001</claim_timestamp>
+        <metadata_update_name>sys_script_include_a552a7b0db5313005d29fcdfbf96199f</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>NARESH GIT TEST</previous_claim_name>
+        <previous_claim_scope>b61710d42f1120101936aa5df699b63f</previous_claim_scope>
+        <sys_created_by>naresh</sys_created_by>
+        <sys_created_on>2020-12-21 03:01:22</sys_created_on>
+        <sys_id>56b7d81c2f1120101936aa5df699b6a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>naresh</sys_updated_by>
+        <sys_updated_on>2020-12-21 03:01:22</sys_updated_on>
+    </sys_claim>
+</record_update>
